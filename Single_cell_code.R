@@ -5,6 +5,7 @@ library(ggplot2)
 library(limma)
 library(patchwork)
 
+#Load data
 data<-Read10X(data.dir ="Sample_2812-CL-1_GCACTGAG-TTCACGCA/filtered_feature_bc_matrix")
 Control <- CreateSeuratObject(counts = data, project = "Vaccine", min.cells = 3, min.features = 200,meta.data=data.frame(row.names=colnames(data),cell=colnames(data),sample="Control"))
 data<-Read10X(data.dir ="Sample_2450-CL-2_AAGATTGG-AAATCCCG/outs/filtered_feature_bc_matrix")
